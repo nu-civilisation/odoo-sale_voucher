@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="sale_voucher_action_manage" model="ir.actions.act_window">
+        <field name="name">Manage Sale Vouchers</field>
+        <field name="res_model">sale.vouchers</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="sale_vouchers_view_tree" model="ir.ui.view">
+        <field name="name">sale:vouchers.tree</field>
+        <field name="model">sale.vouchers</field>
+        <field name="arch" type="xml">
+            <tree string="List Sale Vouchers">
+                <field name="voucher_uuid"/>
+                <field name="user_ids"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sale_vouchers_view_form" model="ir.ui.view">
+        <field name="name">sale.vouchers.form</field>
+        <field name="model">sale.vouchers</field>
+        <field name="arch" type="xml">
+            <form string="Form Sale Vouchers">
+                <sheet>
+                    <h1># <field name="voucher_uuid"/></h1>
+                    <separator/>
+                    <group>
+                        <field name="user_ids"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+     </record>
+
+    <menuitem id="sale_voucher_menu_root" name="Sale Vouchers">
+        <menuitem id="sale_voucher_menu_manage" name="Manage Sale Vouchers">
+            <menuitem id="sale_voucher_menu_vouchers" action="sale_voucher_action_manage"/>
+        </menuitem>
+    </menuitem>
+</odoo>

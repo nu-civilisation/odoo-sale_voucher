@@ -1,0 +1,4 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_vouchers,access_sale_vouchers,model_sale_vouchers,base.group_user,1,0,0,0
+modify_sale_vouchers,modify_sale_vouchers,model_sale_vouchers,base.group_user,1,1,1,0
+manage_sale_vouchers,manage_sale_vouchers,model_sale_vouchers,base.group_user,1,1,1,1
